@@ -20,10 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        this.supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
-        supportActionBar?.setDisplayShowCustomEnabled(true)
-        supportActionBar?.setCustomView(R.layout.custom_action_bar)
-        supportActionBar?.elevation = 0f
+        setCustomActionBar()
 
         val navView: BottomNavigationView = binding.navView
 
@@ -32,10 +29,17 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_home, R.id.navigation_product_details
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    private fun setCustomActionBar() {
+        this.supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
+        supportActionBar?.setDisplayShowCustomEnabled(true)
+        supportActionBar?.setCustomView(R.layout.custom_action_bar)
+        supportActionBar?.elevation = 0f
     }
 }

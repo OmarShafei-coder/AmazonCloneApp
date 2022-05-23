@@ -12,14 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.omarshafei.amazoncloneapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_product_details"
+        android:name="com.omarshafei.amazoncloneapp.ui.product_details.ProductDetailsFragment"
+        android:label="@string/title_product_details"
+        tools:layout="@layout/fragment_product_details" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.omarshafei.amazoncloneapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>
