@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:padding="8dp"
+        android:id="@+id/circular_bg"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@drawable/round_view"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="20dp"
+        tools:src="@drawable/toys"
+        app:layout_constraintTop_toTopOf="@id/circular_bg"
+        app:layout_constraintBottom_toBottomOf="@id/circular_bg"
+        app:layout_constraintStart_toStartOf="@id/circular_bg"
+        app:layout_constraintEnd_toEndOf="@id/circular_bg"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/image"
+        app:layout_constraintStart_toStartOf="@id/image"
+        tools:text="Test" />
 </androidx.constraintlayout.widget.ConstraintLayout>

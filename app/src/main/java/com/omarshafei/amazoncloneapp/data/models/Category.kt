@@ -1,6 +1,8 @@
 package com.omarshafei.amazoncloneapp.data.models
 
+import android.graphics.drawable.Drawable
+
 data class Category(
-    private val image: Int,
-    private val name: String
+    val imageResourceId: Drawable,
+    val name: String
 )

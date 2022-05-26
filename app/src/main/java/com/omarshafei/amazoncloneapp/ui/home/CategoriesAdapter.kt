@@ -24,9 +24,9 @@ class CategoriesAdapter(private val list: MutableList<Category>) :
     }
 
     override fun onBindViewHolder(holder: CategoriesAdapter.CategoriesViewHolder, position: Int) {
-        val Categories = list[position]
-//        holder.year?.text = Categories.year
-
+        val category = list[position]
+        holder.categoryImage?.setImageDrawable(category.imageResourceId)
+        holder.categoryName?.text = category.name
     }
 
     override fun getItemCount(): Int {
@@ -34,7 +34,7 @@ class CategoriesAdapter(private val list: MutableList<Category>) :
     }
 
     inner class CategoriesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val year = binding?.year
-
+        val categoryImage = binding?.image
+        val categoryName = binding?.text
     }
 }
