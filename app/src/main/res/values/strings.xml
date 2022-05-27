@@ -4,5 +4,9 @@
     <string name="title_product_details">Product Details</string>
     <string name="search_amazon_eg">Search Amazon.eg</string>
     <string name="deliver_to_omar_cairo">Deliver to Omar - Cairo</string>
+    <string name="today_s_deals">Today\'s Deals</string>
+    <string name="egp">EGP</string>
+    <string name="see_all_deals">See all deals</string>
+    <string name="top_deal">Top deal</string>
 
 </resources>

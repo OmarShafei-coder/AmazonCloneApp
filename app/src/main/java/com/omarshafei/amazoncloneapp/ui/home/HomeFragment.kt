@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.omarshafei.amazoncloneapp.R
 import com.omarshafei.amazoncloneapp.data.models.Category
+import com.omarshafei.amazoncloneapp.data.models.Deal
 import com.omarshafei.amazoncloneapp.data.models.Offer
 import com.omarshafei.amazoncloneapp.databinding.FragmentHomeBinding
 
@@ -20,8 +21,10 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var categoriesRecyclerView: RecyclerView
     private lateinit var offersRecyclerView: RecyclerView
+    private lateinit var dealsRecyclerView: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
     private lateinit var offersAdapter: OffersAdapter
+    private lateinit var dealsAdapter: DealsAdapter
     private lateinit var imageViewPager: ViewPager
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,12 +36,14 @@ class HomeFragment : Fragment() {
         constructCategoriesRecyclerView()
         constructImagesViewPagerAdapter()
         constructOffersRecyclerView()
+        constructDealsRecyclerView()
         return binding.root
     }
 
     private fun initViews() {
         categoriesRecyclerView = binding.categoriesRecyclerView
         offersRecyclerView = binding.offersRecyclerView
+        dealsRecyclerView = binding.dealsRecyclerView
     }
 
     private fun constructCategoriesRecyclerView() {
@@ -49,6 +54,22 @@ class HomeFragment : Fragment() {
     private fun constructOffersRecyclerView() {
         offersAdapter = OffersAdapter(getOffersList())
         offersRecyclerView.adapter = offersAdapter
+    }
+
+    private fun constructDealsRecyclerView() {
+        dealsAdapter = DealsAdapter(getDealsList())
+        dealsRecyclerView.adapter = dealsAdapter
+    }
+
+    private fun getDealsList(): MutableList<Deal> {
+        return mutableListOf(
+            Deal(ResourcesCompat.getDrawable(resources, R.drawable.deal1,
+                requireContext().theme)!!, "7% off", 175.00),
+            Deal(ResourcesCompat.getDrawable(resources, R.drawable.deal2,
+                requireContext().theme)!!, "21% off", 4099.00),
+            Deal(ResourcesCompat.getDrawable(resources, R.drawable.deal3,
+                requireContext().theme)!!, "EGP7275 and under", 7275.00)
+        )
     }
 
     private fun getCategoriesList(): MutableList<Category> {
